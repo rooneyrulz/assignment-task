@@ -14,7 +14,6 @@ const RegisterScreen = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
 
   const navigate = useNavigate();
 
@@ -37,7 +36,7 @@ const RegisterScreen = () => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    const areFieldsEmpty = [name, email, password, confirmPassword].some(
+    const areFieldsEmpty = [name, email, password].some(
       (field) => !field.trim()
     );
 
@@ -50,11 +49,6 @@ const RegisterScreen = () => {
       toast.error(
         "Password must contain at least one letter, one number, and one special character"
       );
-      return;
-    }
-
-    if (password !== confirmPassword) {
-      toast.error("Password is not matching!");
       return;
     }
 
@@ -99,16 +93,6 @@ const RegisterScreen = () => {
             placeholder="Enter Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-          ></Form.Control>
-        </Form.Group>
-
-        <Form.Group className="my-2" controlId="confirmPassword">
-          <Form.Label>Confirm Password</Form.Label>
-          <Form.Control
-            type="password"
-            placeholder="Confirm Password"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
           ></Form.Control>
         </Form.Group>
 
