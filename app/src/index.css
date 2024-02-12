@@ -1,0 +1,14 @@
+.form-wrapper, .notfound {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 90vh;
+}
+
+.notfound {
+    align-items: center;
+}
+
+.dashboard-heading {
+    font-weight: bold;
+}
